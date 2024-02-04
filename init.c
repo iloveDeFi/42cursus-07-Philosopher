@@ -6,8 +6,18 @@
 /*   By: bbessard <bbessard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/03 19:10:05 by bat               #+#    #+#             */
-/*   Updated: 2024/02/04 17:26:00 by bbessard         ###   ########.fr       */
+/*   Updated: 2024/02/04 17:54:35 by bbessard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
+
+void ft_init_philo()
+{
+
+}
+
+void ft_init_data()
+{
+	
+}
