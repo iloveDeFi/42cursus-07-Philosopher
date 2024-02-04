@@ -1,27 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   time.c                                             :+:      :+:    :+:   */
+/*   message.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bbessard <bbessard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/03 19:17:30 by bat               #+#    #+#             */
-/*   Updated: 2024/02/04 17:14:58 by bbessard         ###   ########.fr       */
+/*   Created: 2024/02/04 16:59:26 by bbessard          #+#    #+#             */
+/*   Updated: 2024/02/04 17:09:30 by bbessard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "philo.h"
-
-int ft_get_time_of_day(void)
+void ft_print_taking_fork(t_philo)
 {
-	int timeInMilliseconds;
-    struct timeval tv;
 
-    gettimeofday(&tv, NULL);
-	timeInMilliseconds = tv.tv_usec * 1000;
-
-    printf("Seconds since 1/1/1970: %lu\n",tv.tv_sec);
-    printf("Milliseconds since 1/1/1970: %d\n", timeInMilliseconds);
-
-    return(0);
 }
