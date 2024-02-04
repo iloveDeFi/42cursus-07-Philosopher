@@ -6,7 +6,7 @@
 /*   By: bbessard <bbessard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/03 19:15:28 by bat               #+#    #+#             */
-/*   Updated: 2024/02/04 16:57:50 by bbessard         ###   ########.fr       */
+/*   Updated: 2024/02/04 17:50:55 by bbessard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,9 @@
 
 typedef enum e_state
 {
-	THINK;
-	EAT;
-	SLEEP;
+	THINK,
+	EAT,
+	SLEEP,
 } t_state;
 
 typedef struct s_data
@@ -45,6 +45,30 @@ typedef struct s_philo
 	int numberOfMealEaten;
 	t_state state;
 	t_data data;
-}
+} t_philo;
+
+/* ACTION */
+
+
+/* ERROR */
+
+
+/* INIT */
+
+
+/* MESSGAE */
+
+
+/* PHILO */
+
+
+/* STATE */
+
+
+/* THREAD */
+
+
+/* TIME */
+int	ft_get_time_of_day_in_ms(void);
 
 #endif

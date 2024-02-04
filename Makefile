@@ -3,21 +3,23 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: bat <bat@student.42.fr>                    +#+  +:+       +#+         #
+#    By: bbessard <bbessard@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/03 19:09:12 by bat               #+#    #+#              #
-#    Updated: 2024/02/04 09:30:30 by bat              ###   ########.fr        #
+#    Updated: 2024/02/04 17:28:39 by bbessard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS	=			philo.c \
-					init.c \
+SRCS	=			action.c \
+					check.c \
+					destroy.c \
 					error.c \
-					thread.c \
-					time.c \
+					init.c \
+					message.c \
+					philo.c \
 					state.c \
-					action.c \
-					
+					thread.c \
+					time.c 					
 
 OBJS	=			${SRCS:.c=.o}
 

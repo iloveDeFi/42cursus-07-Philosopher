@@ -1,24 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   time.c                                             :+:      :+:    :+:   */
+/*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bbessard <bbessard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/03 19:17:30 by bat               #+#    #+#             */
-/*   Updated: 2024/02/04 17:26:22 by bbessard         ###   ########.fr       */
+/*   Created: 2024/02/04 17:34:21 by bbessard          #+#    #+#             */
+/*   Updated: 2024/02/04 17:51:33 by bbessard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
 
-int ft_get_time_of_day_in_ms(void)
+int ft_atoi(char *str)
 {
-	int timeInMilliseconds;
-    struct timeval tv;
+	int i;
+	int sign;
+	int result;
 
-    gettimeofday(&tv, NULL);
-	timeInMilliseconds = tv.tv_usec * 1000;
-
-    return(timeInMilliseconds);
+	i = 0;
+	sign = 1;
+	result = 0;
+	
+	while (str[i] == ' ' || str[i] == '\n' || str[i] == '\t' ||
+			str[i] == '\v' || str[i] == '\f' || str[i] == '\r')
+		i++;
+		
+	if (str[i] == '-' || str[i] == '+')
+	{
+		if (str[i] == '-')
+			sign *= -1;
+		i++;
+	}
+	
+	while(str[i] >= '0' && str[i] <= '9')
+	{
+		result = result * 10 + (str[i] - '0');
+		i++;
+	}
+	
+	return (result * sign);
 }
