@@ -6,11 +6,11 @@
 /*   By: bbessard <bbessard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/05 09:03:36 by bbessard          #+#    #+#             */
-/*   Updated: 2024/02/05 09:06:56 by bbessard         ###   ########.fr       */
+/*   Updated: 2024/02/05 10:23:32 by bbessard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <philo.h>
+#include "philo.h"
 
 void	ft_supervisor(t_data *rules)
 {
@@ -43,7 +43,7 @@ int	get_time_since_last_meal(t_data *rules, int i)
 	int	timeSinceLastMeal;
 
 	pthread_mutex_lock(&(rules->eating_locker));
-	timeSinceLastMeal = ft_get_time_in_ms() - \
+	timeSinceLastMeal = ft_get_time_of_day_in_ms() - \
 		rules->philosophers[i].lastMeal;
 	pthread_mutex_unlock(&(rules->eating_locker));
 	return (timeSinceLastMeal);

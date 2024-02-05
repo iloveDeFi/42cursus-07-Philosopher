@@ -6,14 +6,44 @@
 /*   By: bbessard <bbessard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/04 17:27:08 by bbessard          #+#    #+#             */
-/*   Updated: 2024/02/04 17:59:47 by bbessard         ###   ########.fr       */
+/*   Updated: 2024/02/05 10:17:36 by bbessard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
 
-ft_check_args(argc, argv)
+int	ft_dead_check(t_data *rules)
 {
+	pthread_mutex_lock(&(rules->dead_locker));
+	if (rules->dead == 1)
+	{
+		pthread_mutex_unlock(&(rules->dead_locker));
+		return (1);
+	}
+	pthread_mutex_unlock(&(rules->dead_locker));
+	return (0);
+}
 
-	
+int	ft_end_check(t_data *rules)
+{
+	pthread_mutex_lock(&(rules->end_locker));
+	if (rules->end == 1)
+	{
+		pthread_mutex_unlock(&(rules->end_locker));
+		return (1);
+	}
+	pthread_mutex_unlock(&(rules->end_locker));
+	return (0);
+}
+
+int	ft_sasieted_nb_check(t_data *rules)
+{
+	pthread_mutex_lock(&(rules->sasieted_locker));
+	if (rules->numberOfSatietedPhilo == rules->numberOfPhilo)
+	{
+		pthread_mutex_unlock(&(rules->sasieted_locker));
+		return (1);
+	}
+	pthread_mutex_unlock(&(rules->sasieted_locker));
+	return (0);
 }
