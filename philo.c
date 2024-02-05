@@ -6,7 +6,7 @@
 /*   By: bbessard <bbessard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/03 19:15:14 by bat               #+#    #+#             */
-/*   Updated: 2024/02/05 10:20:56 by bbessard         ###   ########.fr       */
+/*   Updated: 2024/02/05 10:29:21 by bbessard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,5 @@ int main(int argc, char *argv[])
 		ft_launch_dinner(&data);
 		ft_destroy_mutex(&data);
 	}
-
-
 	return 0;
 }

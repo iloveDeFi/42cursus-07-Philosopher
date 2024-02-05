@@ -6,7 +6,7 @@
 /*   By: bbessard <bbessard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/03 19:15:28 by bat               #+#    #+#             */
-/*   Updated: 2024/02/05 10:21:57 by bbessard         ###   ########.fr       */
+/*   Updated: 2024/02/05 10:58:34 by bbessard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,7 +86,6 @@ void 	ft_init_data_and_args(t_data *data, char *argv[]);
 
 /* MESSAGE */
 int		ft_print_message(t_data *rules, int id, char *str);
-
 
 /* PHILO */
 int 	main(int argc, char *argv[]);

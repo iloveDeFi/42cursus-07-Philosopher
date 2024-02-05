@@ -6,7 +6,7 @@
 /*   By: bbessard <bbessard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/04 17:26:15 by bbessard          #+#    #+#             */
-/*   Updated: 2024/02/05 10:21:45 by bbessard         ###   ########.fr       */
+/*   Updated: 2024/02/05 10:48:46 by bbessard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 void	ft_launch_dinner(t_data *data)
 {
-	t_philo	*philo;
 	int		i;
+	t_philo	*philo;
 
-	philo = data->philosophers;
 	i = 0;
+	philo = data->philosophers;
 	while (i < data->numberOfPhilo)
 	{
 		pthread_create(&(philo[i].threadID), NULL, ft_routine, &(philo[i]));
