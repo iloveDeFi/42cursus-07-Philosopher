@@ -6,7 +6,7 @@
 /*   By: bbessard <bbessard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/03 19:10:05 by bat               #+#    #+#             */
-/*   Updated: 2024/02/06 16:16:22 by bbessard         ###   ########.fr       */
+/*   Updated: 2024/02/06 17:37:25 by bbessard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,13 @@ void	ft_init_philo(t_data *data)
 	int	i;
 
 	i = 0;
-	while (i < data->numberOfPhilo)
+	while (i < data->number_of_philo)
 	{
-		data->philosophers[i].philoID = i + 1;
+		data->philosophers[i].philo_id = i + 1;
 		data->philosophers[i].data = data;
-		data->philosophers[i].rightForkID = i;
-		data->philosophers[i].leftForkID = (i + 1) % data->numberOfPhilo;
-		data->philosophers[i].numberOfMealEaten = 0;
+		data->philosophers[i].right_fork_id = i;
+		data->philosophers[i].left_fork_id = (i + 1) % data->number_of_philo;
+		data->philosophers[i].number_of_meal_eaten = 0;
 		data->philosophers[i].state = THINK;
 		i++;
 	}
@@ -33,19 +33,19 @@ void	ft_init_data_and_args(t_data *data, char *argv[])
 {
 	int	i;
 
-	data->numberOfPhilo = ft_atoi(argv[1]);
-	data->timeToDie = ft_atoi(argv[2]);
-	data->timeToEat = ft_atoi(argv[3]);
-	data->timeToSleep = ft_atoi(argv[4]);
+	data->number_of_philo = ft_atoi(argv[1]);
+	data->time_to_die = ft_atoi(argv[2]);
+	data->time_to_eat = ft_atoi(argv[3]);
+	data->time_to_sleep = ft_atoi(argv[4]);
 	if (argv[5] != NULL)
-		data->numberOfTimesEachPhiloMustEat = ft_atoi(argv[5]);
+		data->number_of_times_each_philo_must_eat = ft_atoi(argv[5]);
 	else
-		data->numberOfTimesEachPhiloMustEat = 0;
-	data->startTime = ft_get_time_of_day_in_ms();
+		data->number_of_times_each_philo_must_eat = 0;
+	data->start_time = ft_get_time_of_day_in_ms();
 	data->end = 0;
 	data->dead = 0;
 	i = 0;
-	while (i < data->numberOfPhilo)
+	while (i < data->number_of_philo)
 	{
 		pthread_mutex_init(&data->forks[i], NULL);
 		i++;

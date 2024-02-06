@@ -6,7 +6,7 @@
 /*   By: bbessard <bbessard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/03 19:16:53 by bat               #+#    #+#             */
-/*   Updated: 2024/02/05 11:07:25 by bbessard         ###   ########.fr       */
+/*   Updated: 2024/02/06 17:34:32 by bbessard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@ void	*ft_routine(void *args)
 
 	philo = (t_philo *)args;
 	rules = philo->data;
-	if (rules->numberOfPhilo == 1)
-		ft_die(rules, philo->philoID);
-	if (philo->philoID % 2)
+	if (rules->number_of_philo == 1)
+		ft_die(rules, philo->philo_id);
+	if (philo->philo_id % 2)
 		usleep(1000);
 	while (!ft_dead_check(rules))
 	{
@@ -39,36 +39,36 @@ void	ft_eat(t_philo *philo)
 	t_data	*rules;
 
 	rules = philo->data;
-	pthread_mutex_lock(&(rules->forks[philo->leftForkID]));
-	ft_print_message(rules, philo->philoID, "has taken a fork");
-	pthread_mutex_lock(&(rules->forks[philo->rightForkID]));
-	ft_print_message(rules, philo->philoID, "has taken a fork");
+	pthread_mutex_lock(&(rules->forks[philo->left_fork_id]));
+	ft_print_message(rules, philo->philo_id, "has taken a fork");
+	pthread_mutex_lock(&(rules->forks[philo->right_fork_id]));
+	ft_print_message(rules, philo->philo_id, "has taken a fork");
 	pthread_mutex_lock(&(rules->eating_locker));
-	philo->lastMeal = ft_get_time_of_day_in_ms();
+	philo->last_meal = ft_get_time_of_day_in_ms();
 	philo->state = EAT;
-	ft_print_message(rules, philo->philoID, ft_get_state(philo->state));
+	ft_print_message(rules, philo->philo_id, ft_get_state(philo->state));
 	pthread_mutex_unlock(&(rules->eating_locker));
-	ft_thread_sleep(rules->timeToEat, rules);
-	philo->numberOfMealEaten++;
+	ft_thread_sleep(rules->time_to_eat, rules);
+	philo->number_of_meal_eaten++;
 	pthread_mutex_lock(&(rules->sasieted_locker));
-	if (rules->numberOfTimesEachPhiloMustEat == philo->numberOfMealEaten)
+	if (rules->number_of_times_each_philo_must_eat == philo->number_of_meal_eaten)
 	{
-		rules->numberOfSatietedPhilo++;
+		rules->number_of_satieted_philo++;
 	}
 	pthread_mutex_unlock(&(rules->sasieted_locker));
-	pthread_mutex_unlock(&(rules->forks[philo->leftForkID]));
-	pthread_mutex_unlock(&(rules->forks[philo->rightForkID]));
+	pthread_mutex_unlock(&(rules->forks[philo->left_fork_id]));
+	pthread_mutex_unlock(&(rules->forks[philo->right_fork_id]));
 }
 
 void	ft_sleep(t_data *rules, t_philo *philo)
 {
 	philo->state = SLEEP;
-	ft_print_message(rules, philo->philoID, ft_get_state(philo->state));
-	ft_thread_sleep(rules->timeToSleep, rules);
+	ft_print_message(rules, philo->philo_id, ft_get_state(philo->state));
+	ft_thread_sleep(rules->time_to_sleep, rules);
 }
 
 void	ft_think(t_data *rules, t_philo *philo)
 {
 	philo->state = THINK;
-	ft_print_message(rules, philo->philoID, ft_get_state(philo->state));
+	ft_print_message(rules, philo->philo_id, ft_get_state(philo->state));
 }

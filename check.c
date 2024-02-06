@@ -6,7 +6,7 @@
 /*   By: bbessard <bbessard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/04 17:27:08 by bbessard          #+#    #+#             */
-/*   Updated: 2024/02/05 10:17:36 by bbessard         ###   ########.fr       */
+/*   Updated: 2024/02/06 17:34:52 by bbessard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int	ft_end_check(t_data *rules)
 int	ft_sasieted_nb_check(t_data *rules)
 {
 	pthread_mutex_lock(&(rules->sasieted_locker));
-	if (rules->numberOfSatietedPhilo == rules->numberOfPhilo)
+	if (rules->number_of_satieted_philo == rules->number_of_philo)
 	{
 		pthread_mutex_unlock(&(rules->sasieted_locker));
 		return (1);
