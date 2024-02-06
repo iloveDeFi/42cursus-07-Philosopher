@@ -6,7 +6,7 @@
 /*   By: bbessard <bbessard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/03 19:10:05 by bat               #+#    #+#             */
-/*   Updated: 2024/02/05 08:34:35 by bbessard         ###   ########.fr       */
+/*   Updated: 2024/02/06 16:16:22 by bbessard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,9 @@ void	ft_init_philo(t_data *data)
 	}
 }
 
-void ft_init_data_and_args(t_data *data, char *argv[])
+void	ft_init_data_and_args(t_data *data, char *argv[])
 {
-	int i;
+	int	i;
 
 	data->numberOfPhilo = ft_atoi(argv[1]);
 	data->timeToDie = ft_atoi(argv[2]);
