@@ -6,7 +6,7 @@
 /*   By: bbessard <bbessard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/03 19:16:53 by bat               #+#    #+#             */
-/*   Updated: 2024/02/06 17:34:32 by bbessard         ###   ########.fr       */
+/*   Updated: 2024/02/06 17:49:31 by bbessard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,8 @@ void	ft_eat(t_philo *philo)
 	ft_thread_sleep(rules->time_to_eat, rules);
 	philo->number_of_meal_eaten++;
 	pthread_mutex_lock(&(rules->sasieted_locker));
-	if (rules->number_of_times_each_philo_must_eat == philo->number_of_meal_eaten)
+	if (rules->number_of_times_each_philo_must_eat == \
+		philo->number_of_meal_eaten)
 	{
 		rules->number_of_satieted_philo++;
 	}
